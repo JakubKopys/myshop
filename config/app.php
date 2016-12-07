@@ -234,8 +234,10 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'Fileentry' => \App\Fileentry::class,
-        'User' => \App\User::class,
-        'Product' => \App\Product::class,
+        'User'      => \App\User::class,
+        'Product'   => \App\Product::class,
+        'Cart'      => \App\Cart::class,
+        'CartItem'  => \App\CartItem::class,
 
     ],
 

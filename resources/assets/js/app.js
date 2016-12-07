@@ -23,3 +23,17 @@ $(document).on('change', '.new_product_image input:file', function() {
     var file = this.files[0];
     $(".btn-txt").html(file.name);
 });
+
+$(document).on('click', 'ul.pagination li a', function (e) {
+    e.preventDefault();
+    var page = $(this).attr('href').split('page=')[1];
+    $.ajax({
+        url: 'paginated_products/?page=' + page
+    }).done(function (data) {
+        var view = data[0];
+        var links = data[1];
+        $('.products').html(view);
+        $('.pag').html(links);
+        location.hash = page;
+    });
+});

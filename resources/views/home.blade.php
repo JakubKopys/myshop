@@ -14,9 +14,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            @foreach($products as $product)
-                @include('products/product', $product)
-            @endforeach
+            <div class="products">
+                @foreach($products as $product)
+                    @include('products/product', $product)
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 pag">
+            {{ $products->links() }}
         </div>
     </div>
 </div>

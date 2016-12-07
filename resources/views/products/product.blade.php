@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-7">
-                    <a href="#" class="btn btn-success btn-product">
+                    <a href={{URL::action('CartController@addItem', [$product->id])}} class="btn btn-success btn-product">
                         <span class="fa fa-shopping-cart"></span> Add to Cart
                     </a>
                 </div>

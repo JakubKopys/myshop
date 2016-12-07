@@ -27,3 +27,22 @@ Route::get('/products/{product}', 'ProductController@show');
 Route::patch('/products/{product}', 'ProductController@update');
 Route::get('/products', 'ProductController@index');
 Route::delete('/products/{product}', 'ProductController@destroy');
+
+Route::get('/addProduct/{product}', 'CartController@addItem');
+Route::get('/removeItem/{cartItem}', 'CartController@removeItem');
+Route::get('/cart', 'CartController@show');
+
+
+Route::get('/paginated_products', function () {
+    $products = App\Product::paginate(6);
+
+    // HTML string accumulator
+    $view = null;
+
+    foreach ($products as $product) {
+        $view .= ((string)View::make('products/product', compact('product'))->render());
+    }
+
+    //(string)$products->links() is pagination html for selected page.
+    return [$view, (string)$products->links()];
+});

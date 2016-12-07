@@ -7720,4 +7720,15 @@ span.error {
   color: #c91d12;
 }
 
+.pag {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.products-index .image {
+  width: 50px;
+}
+
 /*# sourceMappingURL=app.css.map */

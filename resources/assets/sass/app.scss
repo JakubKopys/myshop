@@ -39,3 +39,14 @@ footer {
 span.error {
   color: $error-text;
 }
+
+.pag {
+  display: flex;
+  justify-content: center;
+}
+
+.products-index {
+  .image {
+    width: 50px;
+  }
+}
