@@ -18,6 +18,20 @@ class MainSeeder extends Seeder
             'admin' => true
         ]);
 
-        factory(App\Product::class, 10)->create();
+        $strings = ['electronics', 'fashion and beauty', 'home', 'health', 'culture and entertainment',
+                 'sport and recreation', 'motorization', 'collections and art'];
+        $categories = [];
+
+        for ($i = 0; $i < count($strings); $i++) {
+            $categories[] = factory(App\Category::class)->create([
+                'name' => $strings[$i]
+            ]);
+        }
+
+        foreach ($categories as $category) {
+            factory(App\Product::class, 3)->create([
+               'category_id' => $category->id
+            ]);
+        }
     }
 }

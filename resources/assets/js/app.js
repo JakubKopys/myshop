@@ -37,3 +37,42 @@ $(document).on('click', 'ul.pagination li a', function (e) {
         location.hash = page;
     });
 });
+
+$(document).on('click', 'a.login-link', function (e) {
+    e.preventDefault();
+    var $loginLink = $(this);
+    var $offset = $loginLink.offset();
+    var $loginPopup = $('.login-popup');
+    var $height = $loginLink.outerHeight();
+    var $width = $loginPopup.outerWidth();
+    console.log($(this).offset());
+    $loginPopup.css({
+        position: "absolute",
+        top: ($offset.top + $height + 5) + "px",
+        left: ($offset.left - $width/2) + "px"
+    }).slideToggle(200);
+});
+
+$(window).scroll(function() {
+    var $scroller = $('#scroller');
+    var $loginPopup = $('.login-popup');
+    var $loginLink = $('a.login-link');
+    if ($(window).scrollTop() > 200) {
+        $scroller.addClass('stuck');
+        $loginPopup.css({
+            top: ($loginLink.offset().top + $loginLink.outerHeight() + 5) + "px"
+        })
+    } else {
+        $scroller.removeClass('stuck');
+        $loginPopup.css({
+            top: ($loginLink.offset().top + $loginLink.outerHeight() + 5) + "px"
+        })
+    }
+});
+
+$(document).bind(
+    'touchmove',
+    function(e) {
+        e.preventDefault();
+    }
+);

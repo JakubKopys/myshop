@@ -15,6 +15,9 @@ class CreateTableProducts extends Migration
             $table->float('price');
             $table->string('image')->default('missing.png');
             $table->string('file_id')->nullable();
+            $table->integer('category_id')->unsigned()->index();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -24,3 +27,4 @@ class CreateTableProducts extends Migration
         Schema::drop('products');
     }
 }
+

@@ -7,10 +7,22 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+html, body {
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 .jumbotron {
   margin-bottom: 0;
   padding: 30px 0;
+  width: 100%;
+  height: 200px;
 }
 
 .navbar {
@@ -49,4 +61,23 @@ span.error {
   .image {
     width: 50px;
   }
+}
+
+.login-popup {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  display: none;
+  z-index: 1;
+}
+
+.follow {
+  position: fixed;
+}
+
+.stuck {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
 }

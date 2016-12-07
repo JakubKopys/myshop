@@ -238,6 +238,7 @@ return [
         'Product'   => \App\Product::class,
         'Cart'      => \App\Cart::class,
         'CartItem'  => \App\CartItem::class,
+        'Category'  => \App\Category::class
 
     ],
 

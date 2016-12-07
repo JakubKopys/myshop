@@ -1,5 +1,5 @@
 @section('navbar')
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" id="scroller">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">Buy Stuff</a>
@@ -21,7 +21,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             @if(Auth::guest())
-                <li><a href="/login">Login</a></li>
+                <li><a href="/login" class="login-link">Login</a></li>
                 <li><a href="/register">Register</a></li>
             @else
                 @if (Auth::user()->admin)
@@ -64,4 +64,6 @@
         </ul>
     </div>
 </nav>
+
+@include('auth/form')
 @endsection

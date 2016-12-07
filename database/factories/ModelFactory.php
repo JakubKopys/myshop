@@ -25,10 +25,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 
 $factory->define(App\Product::class, function (Faker\Generator $faker) {
+    return [
+        'name'          => $faker->word,
+        'description'   => $faker->text,
+        'price'         => $faker->randomFloat(2, 5, 100),
+        'category_id'   => rand(1,8)
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
 
     return [
-        'name' => $faker->word,
-        'description' => $faker->text,
-        'price' => $faker->randomFloat(2, 5, 100)
+        'name' => $faker->word
     ];
 });
