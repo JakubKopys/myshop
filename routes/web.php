@@ -32,6 +32,11 @@ Route::get('/addProduct/{product}', 'CartController@addItem');
 Route::get('/removeItem/{cartItem}', 'CartController@removeItem');
 Route::get('/cart', 'CartController@show');
 
+Route::get('/categories/new', 'CategoryController@new');
+Route::post('/categories', 'CategoryController@create');
+Route::delete('/categories/{category}', 'CategoryController@destroy');
+Route::get('/categories/{category}/edit', 'CategoryController@edit');
+Route::patch('/categories/{category}', 'CategoryController@update');
 
 Route::get('/paginated_products', function () {
     $products = App\Product::paginate(6);

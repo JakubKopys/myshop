@@ -19,7 +19,8 @@ class MainSeeder extends Seeder
         ]);
 
         $strings = ['electronics', 'fashion and beauty', 'home', 'health', 'culture and entertainment',
-                 'sport and recreation', 'motorization', 'collections and art'];
+                    'sport and recreation', 'motorization', 'collections and art', 'technology', 'science',
+                    'programming'];
         $categories = [];
 
         for ($i = 0; $i < count($strings); $i++) {

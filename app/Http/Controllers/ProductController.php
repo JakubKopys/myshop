@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProduct;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,8 @@ class ProductController extends Controller
     public function new()
     {
         if (Auth::user() && Auth::user()->can('create-product', Product::class)) {
-            return view('products.new');
+            $categories = Category::all();
+            return view('products.new', compact('categories'));
         }
         return redirect("/");
     }
@@ -49,6 +51,7 @@ class ProductController extends Controller
             $product->description = $request->input('description');
             $product->price = $request->input('price');
             $product->image = $filename;
+            $product->category_id = $request->input('category_id');
             $product->save();
         }
         return redirect("/");
@@ -66,7 +69,9 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('products/edit', compact('product'));
+        $category = $product->category;
+        $categories = Category::all()->except($category->id);
+        return view('products/edit', compact('product', 'categories', 'category'));
     }
 
     public function update(StoreProduct $request, Product $product)

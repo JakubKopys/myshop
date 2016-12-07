@@ -19,10 +19,11 @@ class StoreProduct extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:products|max:100',
-            'description' => 'required|min:10|max:500',
-            'price' => 'required|numeric',
-            'image' => 'file|mimes:jpeg,bmp,png'
+            'name'          => 'required|unique:products|max:100',
+            'description'   => 'required|min:10|max:500',
+            'price'         => 'required|numeric',
+            'image'         => 'file|mimes:jpeg,bmp,png',
+            'category_id'   => 'required'
         ];
     }
 }

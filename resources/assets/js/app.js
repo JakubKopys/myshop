@@ -64,15 +64,8 @@ $(window).scroll(function() {
         })
     } else {
         $scroller.removeClass('stuck');
-        $loginPopup.css({
-            top: ($loginLink.offset().top + $loginLink.outerHeight() + 5) + "px"
-        })
     }
+    $loginPopup.css({
+        top: ($loginLink.offset().top + $loginLink.outerHeight() + 5) + "px"
+    })
 });
-
-$(document).bind(
-    'touchmove',
-    function(e) {
-        e.preventDefault();
-    }
-);

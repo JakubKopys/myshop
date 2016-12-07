@@ -45,6 +45,22 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="category_id">Category</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category_id">
+                                    <option selected disabled>Choose category</option>
+                                    @foreach($categories as $category)
+                                        <option value={{$category->id}}>{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('category_id'))
+                                    <span class="help-block error">
+                                        {{ $errors->first('category_id') }}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                     </div>
                     <div class="panel-footer new-product-footer">
                         <h5 class="new_product_info">Optional:</h5>

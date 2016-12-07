@@ -43,6 +43,22 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="category_id">Category</label>
+                                <div class="col-md-9">
+                                    <select class="form-control" name="category_id">
+                                        <option selected value={{$category->id}}>{{$category->name}}</option>
+                                        @foreach($categories as $c)
+                                            <option value={{$c->id}}>{{$c->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('category_id'))
+                                        <span class="help-block error">
+                                        {{ $errors->first('category_id') }}
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                         <div class="panel-footer new-product-footer">
                             <h5 class="new_product_info">Optional:</h5>
