@@ -15,6 +15,8 @@ class CreateTableProducts extends Migration
             $table->float('price');
             $table->string('image')->default('missing.png');
             $table->string('file_id')->nullable();
+            $table->float('rating_cache')->unsigned()->default(3.0);
+            $table->float('rating_count')->unsigned()->default(0);
             $table->integer('category_id')->unsigned()->index();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 

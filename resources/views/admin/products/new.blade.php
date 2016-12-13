@@ -1,13 +1,16 @@
-@extends('layouts/app')
+@extends('admin.layouts.base')
 
 @section('content')
-
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form method="POST" action="/products" class="form-horizontal" enctype="multipart/form-data" role="form">
+                <a href="{{URL::action('Admin\ProductController@index')}}" class="btn btn-link back">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    Back to Products Page
+                </a>
+                <form method="POST" action="/admin/products" class="form-horizontal" enctype="multipart/form-data" role="form">
                 {!! csrf_field() !!}
-                <div class="panel panel-info">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="panel-title">New Product</div>
                     </div>

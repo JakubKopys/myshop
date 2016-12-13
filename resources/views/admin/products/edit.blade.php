@@ -1,11 +1,15 @@
-@extends('layouts/app')
+@extends('admin.layouts.base')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                {{Form::open(['url'=>"/products/$product->id", 'method'=>"PATCH", 'enctype'=>"multipart/form-data", 'class'=>'form-horizontal'])}}
-                    <div class="panel panel-info">
+                <a href="{{URL::action('Admin\ProductController@index')}}" class="btn btn-link back">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    Back to Products Page
+                </a>
+                {{Form::open(['url'=>"admin/products/$product->id", 'method'=>"PATCH", 'enctype'=>"multipart/form-data", 'class'=>'form-horizontal'])}}
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title">Edit product</div>
                         </div>
@@ -87,7 +91,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="submit"></label>
                         <div class="col-md-9">
-                            <button id="submit" name="submit" class="btn btn-primary pull-right">Update Product</button>
+                            <button id="submit" name="submit" class="btn btn-default pull-right">Update Product</button>
                         </div>
                     </div>
                 {!! Form::close() !!}

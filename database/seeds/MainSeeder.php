@@ -18,6 +18,8 @@ class MainSeeder extends Seeder
             'admin' => true
         ]);
 
+        factory(App\User::class, 20)->create();
+
         $strings = ['electronics', 'fashion and beauty', 'home', 'health', 'culture and entertainment',
                     'sport and recreation', 'motorization', 'collections and art', 'technology', 'science',
                     'programming'];

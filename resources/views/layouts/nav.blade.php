@@ -5,7 +5,7 @@
             <a class="navbar-brand" href="/">Buy Stuff</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">Page 2</a></li>
             <li><a href="#">Page 3</a></li>
             <form class="navbar-form navbar-left">
@@ -25,9 +25,10 @@
                 <li><a href="/register">Register</a></li>
             @else
                 @if (Auth::user()->admin)
-                    <li><a href="{{URL::action('ProductController@new')}}">Add Product</a></li>
-                    <li><a href="{{URL::action('ProductController@index')}}">Products</a></li>
                     <li>
+                        <a href="{{URL::action('Admin\MainController@index')}}">Admin Page</a>
+                    </li>
+                    <li class={{ Request::is('cart') ? 'active' : '' }}>
                         <a href="{{URL::action('CartController@show')}}">
                             Cart
                             @if (Auth::user()->hasCart())
@@ -37,7 +38,9 @@
                     </li>
                     <li class="vertical_divider"></li>
                 @endif
-                <li><a href="{{URL::action('HomeController@index')}}">Home</a></li>
+                <li class={{ Request::is('/') ? 'active' : '' }}>
+                    <a href="{{URL::action('HomeController@index')}}">Home</a>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>

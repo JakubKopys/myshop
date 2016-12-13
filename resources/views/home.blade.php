@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('navbar')
-    <div class="jumbotron">
+    <div class="jumbotron home-jumbotron">
         <div class="container text-center">
             <h1>Online Store</h1>
             <p>Buy some stuff here I guess...</p>

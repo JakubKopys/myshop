@@ -18,16 +18,22 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function cart()
-    {
+    public function cart() {
         return $this->hasOne('App\Cart');
     }
 
-    public function hasCart()
-    {
+    public function reviews() {
+        return $this->hasMany('App\Review');
+    }
+
+    public function hasCart() {
         if (Cart::where('user_id', $this->id)->count() > 0) {
             return true;
         }
         return false;
+    }
+
+    public function isAdmin() {
+        return $this->admin;
     }
 }

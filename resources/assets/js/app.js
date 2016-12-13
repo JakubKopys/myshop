@@ -24,7 +24,7 @@ $(document).on('change', '.new_product_image input:file', function() {
     $(".btn-txt").html(file.name);
 });
 
-$(document).on('click', 'ul.pagination li a', function (e) {
+$(document).on('click', '.pag ul.pagination li a', function (e) {
     e.preventDefault();
     var page = $(this).attr('href').split('page=')[1];
     $.ajax({
@@ -34,7 +34,11 @@ $(document).on('click', 'ul.pagination li a', function (e) {
         var links = data[1];
         $('.products').html(view);
         $('.pag').html(links);
-        location.hash = page;
+
+        //TODO: change it so backing in browser will result in products from prev page
+        window.history.replaceState(
+            "", "", "/?page="+page
+        );
     });
 });
 
@@ -68,4 +72,8 @@ $(window).scroll(function() {
     $loginPopup.css({
         top: ($loginLink.offset().top + $loginLink.outerHeight() + 5) + "px"
     })
+});
+
+$(document).ready(function () {
+    $("#input-id").rating({min: 0, max: 5, step: 1, showCaption: false});
 });

@@ -12,7 +12,9 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    {{--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bootstrap-star-rating/css/star-rating.min.css">
 
     <!-- Scripts -->
     <script>
@@ -33,6 +35,6 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="/js/jquery.min.js"></script>
-
+    <script src="/bootstrap-star-rating/js/star-rating.min.js" type="text/javascript"></script>
 </body>
 </html>

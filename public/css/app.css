@@ -7687,6 +7687,11 @@ button.close {
   }
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   position: absolute;
   top: 0;
@@ -7695,7 +7700,7 @@ button.close {
   right: 0;
 }
 
-.jumbotron {
+.home-jumbotron {
   margin-bottom: 0;
   padding: 30px 0;
   width: 100%;
@@ -7758,6 +7763,73 @@ span.error {
   z-index: 100;
   width: 100%;
   top: 0;
+}
+
+.main {
+  margin: 0;
+  background: #FDF8FF;
+  height: 100%;
+}
+
+.main .sidebar {
+  background: #8A2BE2;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  box-shadow: 2px 1px 8px 1px rgba(0, 0, 0, 0.75);
+}
+
+.main .content {
+  margin-top: 100px;
+  height: 100%;
+  background: #FDF8FF;
+}
+
+.main .option {
+  height: 100px;
+  width: 100%;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+.main .option a.active {
+  background-color: #6800b5;
+}
+
+.main .option a {
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  background: #4B0082;
+  display: inline-block;
+  padding-top: 35px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  vertical-align: middle;
+  padding-left: 50px;
+  color: #E6E6FA;
+  font-weight: bold;
+  border-bottom: 0 none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+.main .option a:hover {
+  text-decoration: none;
+  background-color: #6800b5;
+}
+
+.main .down {
+  position: absolute;
+  bottom: 0;
+}
+
+a.back {
+  font-size: 1.7rem;
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=app.css.map */
